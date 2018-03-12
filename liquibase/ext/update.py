@@ -1,12 +1,12 @@
 from sys import exit
-from liquibase import run_output
+import tempfile
 
+from liquibase import run_output
+from liquibase.ext.diff import changelog
 try:
 	from liquibase import config
 except:
 	config = None
-
-import tempfile
 
 
 def sql_run(parameters=None, properties=None):
@@ -31,7 +31,8 @@ def sql_run(parameters=None, properties=None):
 	args.append('updateSQL')
 	output = run_output(*args)
 	return output
-	
+
+
 def sql(parameters=None, properties=None):
 	if isinstance(parameters, (str, bytes)):
 		with tempfile.NamedTemporaryFile(suffix='xml') as temp:
@@ -39,4 +40,17 @@ def sql(parameters=None, properties=None):
 			temp.flush()
 			return sql_run({'changeLogFile': temp.name}, properties)
 	return sql_run(parameters, properties)
-	
+
+
+def changelog_sql(parameters=None, properties=None):
+	changes = changelog(parameters, properties)
+	generated_sql = sql(changes)
+	return generated_sql
+
+
+def sql_utf8(parameters=None, properties=None):
+	return sql(parameters, properties).decode('utf-8')
+
+
+def changelog_sql_utf8(parameters=None, properties=None):
+	return changelog_sql(parameters, properties).decode('utf-8')

@@ -1,10 +1,11 @@
 from sys import exit
-from liquibase import run_output
 
+from liquibase import run_output
 try:
 	from liquibase import config
 except:
 	config = None
+
 
 liquibase_properties = {
 	'url' : '',
@@ -13,6 +14,8 @@ liquibase_properties = {
 	'username' : '',
 	'password' : ''
 }
+''' a dict representing `liquibase.properties` file'''
+
 
 changelog_parameters = {
 	'referenceUsername' : '',
@@ -20,6 +23,8 @@ changelog_parameters = {
 	'referenceUrl' : '',
 	'referenceDriver' : '',
 }
+''' a dict representing the arguments passed to `diffChangeLog`'''
+
 
 def changelog(parameters=None, properties=None):
 	if not parameters:
@@ -43,4 +48,7 @@ def changelog(parameters=None, properties=None):
 	args.append('diffChangeLog')
 	output = run_output(*args)
 	return output
-	
+
+
+def changelog_utf8(parameters=None, properties=None):
+	return changelog(parameters, properties).decode('utf-8')
