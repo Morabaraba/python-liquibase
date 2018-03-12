@@ -1,0 +1,20 @@
+
+liquibase_properties = {
+	'url' : 'jdbc:postgresql://localhost:5432/DATABASE',
+	'driver' : 'org.postgresql.Driver',
+	'classpath' : 'postgresql-42.2.0.jar',
+	'username' : 'postgres',
+	'password' : ''
+}
+
+changelog_parameters = {
+	'referenceUsername' : 'postgres',
+	'referencePassword' : '',
+	'referenceUrl' : 'jdbc:postgresql://localhost:5432/DATABASE2COMPARE2',
+	#'referenceDriver' : 'org.postgresql.Driver',
+}
+
+
+sql_parameters = {
+	'changeLogFile': 'changeLogFile.xml'
+}
