@@ -26,7 +26,7 @@ fi
 if [ $EXIT_CODE -ne 0 ] 
   then
     java -version
-    echo 'ERROR: postgresql.jar not working download the jar for your java version eg. `get-postgresql.sh 9.4.1212.jre7` see "https://jdbc.postgresql.org/download.html".'
+    echo 'ERROR: postgresql.jar not working download the jar for your java version eg. `./get-postgresql.sh 9.4.1212.jre7` see "https://jdbc.postgresql.org/download.html".'
 fi
 
 exit $EXIT_CODE

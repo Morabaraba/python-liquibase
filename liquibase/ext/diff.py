@@ -13,7 +13,6 @@ def changelog(**kwargs):
 			exit('"' + req + '" is required.' + config_warning)
 			
 	parameters = arguments2parameters(**kwargs)
-	parameters.append('updateSQL')
 	parameters.append('diffChangeLog')
 	output = run_output(*parameters)
 	return output
