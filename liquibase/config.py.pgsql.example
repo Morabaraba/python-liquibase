@@ -1,20 +1,16 @@
-
-liquibase_properties = {
-	'url' : 'jdbc:postgresql://localhost:5432/DATABASE',
+LIQUIBASE = {
+	'url' : 'jdbc:postgresql://localhost:5432/DB_WE_WANT_TO_CREATE_DIFF_FOR',
 	'driver' : 'org.postgresql.Driver',
-	'classpath' : 'postgresql-42.2.0.jar',
-	'username' : 'postgres',
-	'password' : ''
-}
-
-changelog_parameters = {
-	'referenceUsername' : 'postgres',
+	'classpath' : 'postgresql.jar',
+	'username' : 'postgresql',
+	'password' : '',
+	
+	# Required Diff Parameters
+	'referenceUsername' : 'postgresql',
 	'referencePassword' : '',
-	'referenceUrl' : 'jdbc:postgresql://localhost:5432/DATABASE2COMPARE2',
-	#'referenceDriver' : 'org.postgresql.Driver',
-}
-
-
-sql_parameters = {
-	'changeLogFile': 'changeLogFile.xml'
+	'referenceUrl' : 'jdbc:postgresql://localhost:5432/DB_WITH_CHANGES',
+	# 'referenceDriver' : 'org.postgresql.Driver',
+	
+	# Migration file
+	# 'changeLogFile': 'changeLogFile.xml'
 }

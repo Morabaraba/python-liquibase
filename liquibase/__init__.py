@@ -2,7 +2,10 @@ import sys
 import subprocess
 from pkg_resources import resource_filename
 
-
+def get_jar_classpath():
+    """Return the full classpath to the java archive."""
+    return resource_filename(__name__, "/jar")
+    
 def get_jar_filename():
     """Return the full path to the Liquibase Java archive."""
     return resource_filename(__name__, "/jar/liquibase.jar")
