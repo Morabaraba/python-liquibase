@@ -2,12 +2,12 @@ LIQUIBASE = {
 	'url' : 'jdbc:postgresql://localhost:5432/DB_WE_WANT_TO_CREATE_DIFF_FOR',
 	'driver' : 'org.postgresql.Driver',
 	'classpath' : 'postgresql.jar',
-	'username' : 'postgresql',
-	'password' : '',
+	'username' : 'USERNAME',
+	'password' : 'PASSWORD',
 	
 	# Required Diff Parameters
-	'referenceUsername' : 'postgresql',
-	'referencePassword' : '',
+	'referenceUsername' : 'REF_USERNAME',
+	'referencePassword' : 'REF_PASSWORD',
 	'referenceUrl' : 'jdbc:postgresql://localhost:5432/DB_WITH_CHANGES',
 	# 'referenceDriver' : 'org.postgresql.Driver',
 	
