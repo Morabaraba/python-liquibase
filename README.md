@@ -13,6 +13,10 @@ python -m liquibase # or `liquibase-run` as created by setup.py
 
 But the extra sauce is in the Extentions.
 
+### Presentation
+
+For some basic reasoning and example of usage see the [Google Docs Presentation](https://docs.google.com/presentation/d/e/2PACX-1vTE2Fy6_bf8W8MNeTb7zAJZB9kDskGlmi5_Ld5ZRR8kk8n1yjFy1k1e2TISaDpoOXrWe8LZjItGvjEU/pub?start=false&loop=false&delayms=60000) at the end there is also a Northwind continuous integration example.
+
 ### Extentions
 
 `liquibase.ext.diff` and `liquibase.ext.update` contain helper functions to use [`diffChangeLog`](http://www.liquibase.org/documentation/diff.html) and [`updateSQL`](http://www.liquibase.org/documentation/command_line.html#database-update-commands) more easily.
